@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.17.0"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}, "axis": {"labelFontSize": 12, "titleFontSize": 18}, "title": {"fontSize": 25}}, "data": {"name": "data-6f125365790e4e6e9a174d2ccfaf342d"}, "mark": {"type": "bar"}, "encoding": {"color": {"field": "Major", "legend": null, "scale": {"scheme": "set3"}, "type": "nominal"}, "tooltip": [{"field": "Major", "type": "nominal"}, {"field": "Count", "type": "quantitative"}], "x": {"axis": {"tickCount": 9.0, "tickMinStep": 1, "title": "Count", "titlePadding": 30}, "field": "Count", "scale": {"domain": [0, 10.0]}, "type": "quantitative"}, "y": {"axis": {"labelLimit": 300, "titlePadding": 60}, "field": "Major", "sort": "-x", "type": "nominal"}}, "height": 600, "title": "Majors Distribution in OMC", "width": 700, "$schema": "https://vega.github.io/schema/vega-lite/v5.17.0.json", "datasets": {"data-6f125365790e4e6e9a174d2ccfaf342d": [{"Major": "Engineer", "Count": 9}, {"Major": "Computer Science", "Count": 7}, {"Major": "Digital Marketing and E-Commerce", "Count": 3}, {"Major": "Accounting", "Count": 3}, {"Major": "MBA", "Count": 2}, {"Major": "Human Computer Interaction", "Count": 2}, {"Major": "Architecture", "Count": 1}, {"Major": "Graphic Design & Community Development", "Count": 1}, {"Major": "Suplay Chain Management", "Count": 1}, {"Major": "Speech, Language, and Hearing Sciences", "Count": 1}, {"Major": "Social Work", "Count": 1}, {"Major": "Psychology/Informatics", "Count": 1}, {"Major": "Psychology", "Count": 1}, {"Major": "Plant Science", "Count": 1}, {"Major": "Music Therapy", "Count": 1}, {"Major": "Marketing", "Count": 1}, {"Major": "MA Biblical Exegesis", "Count": 1}, {"Major": "IT", "Count": 1}, {"Major": "International Relations", "Count": 1}, {"Major": "Interior Design", "Count": 1}, {"Major": "Graphic Design", "Count": 1}, {"Major": "Aviation management and operations ", "Count": 1}, {"Major": "Finance", "Count": 1}, {"Major": "Accounting and Entrepreneurship ", "Count": 1}, {"Major": "Education Policy Studies", "Count": 1}, {"Major": "Doctor of Pharmacy", "Count": 1}, {"Major": "Agricultural Economics", "Count": 1}, {"Major": "Data Science", "Count": 1}, {"Major": "Animation and Visual Effects ", "Count": 1}, {"Major": "Computer Information Systems", "Count": 1}, {"Major": "Communication Studies", "Count": 1}, {"Major": "Business Marketing and Information System", "Count": 1}, {"Major": "Business Analytics", "Count": 1}, {"Major": "Biological Engineering ", "Count": 1}, {"Major": "Bilingual Education", "Count": 1}, {"Major": "Bible", "Count": 1}, {"Major": "Urban Planning and Public Policy", "Count": 1}]}};
+      var embedOpt = {"renderer": "canvas", "mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>

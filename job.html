@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.17.0"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}, "axis": {"labelFontSize": 12, "titleFontSize": 18}, "title": {"fontSize": 25}}, "data": {"name": "data-eee2d7a259a660c2bd8d77de3d36e7eb"}, "mark": {"type": "bar"}, "encoding": {"color": {"field": "Job Title", "legend": null, "scale": {"scheme": "pastel1"}, "type": "nominal"}, "tooltip": [{"field": "Job Title", "type": "nominal"}, {"field": "Count", "type": "quantitative"}], "x": {"axis": {"tickCount": 8.0, "tickMinStep": 1, "title": "Count", "titlePadding": 30}, "field": "Count", "scale": {"domain": [0, 9.0]}, "type": "quantitative"}, "y": {"axis": {"labelLimit": 300, "titlePadding": 60}, "field": "Job Title", "sort": "-x", "type": "nominal"}}, "height": 600, "title": "OMC Job Titles", "width": 700, "$schema": "https://vega.github.io/schema/vega-lite/v5.17.0.json", "datasets": {"data-eee2d7a259a660c2bd8d77de3d36e7eb": [{"Job Title": "Student", "Count": 8}, {"Job Title": "Engineer", "Count": 7}, {"Job Title": "Analyst", "Count": 3}, {"Job Title": "Teacher", "Count": 2}, {"Job Title": "Software developer", "Count": 2}, {"Job Title": "Marketing", "Count": 2}, {"Job Title": "Technician", "Count": 2}, {"Job Title": "Interior Design Intern", "Count": 1}, {"Job Title": "Technology Consultant", "Count": 1}, {"Job Title": "Music Therapist", "Count": 1}, {"Job Title": "Audit & Assurance Senior", "Count": 1}, {"Job Title": "Field Worker", "Count": 1}, {"Job Title": "FICA Staff", "Count": 1}, {"Job Title": "Managing Director ", "Count": 1}, {"Job Title": "Dietitian Consultant", "Count": 1}, {"Job Title": "Shift lead ", "Count": 1}, {"Job Title": "Graphic Designer", "Count": 1}, {"Job Title": "Pharmacist", "Count": 1}, {"Job Title": "Engineer ", "Count": 1}, {"Job Title": "Research Assistant", "Count": 1}, {"Job Title": "Finance Coordinator", "Count": 1}, {"Job Title": "UI/UX Designer", "Count": 1}, {"Job Title": "Consultant", "Count": 1}, {"Job Title": "Senior Consultant", "Count": 1}, {"Job Title": "Emerging Professional I", "Count": 1}, {"Job Title": "Technical Artist ", "Count": 1}, {"Job Title": "Auditor", "Count": 1}, {"Job Title": "Researcher", "Count": 1}]}};
+      var embedOpt = {"renderer": "canvas", "mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>
